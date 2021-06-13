@@ -117,7 +117,7 @@ const getMessageQueue = (request, response) => {
 const getAllMessagesPostedByAgentId = (request, response) => { 
     const { agentid } = request.body
      
-    pool.query(`SELECT * FROM agent FULL JOIN agentque ON agent.id = agentque.id;`, (error, results) => {
+    pool.query(`SELECT * FROM agent FULL JOIN agentque ON agent.id = agentque.id`, (error, results) => {
         if (error) {
             console.log('ERROR: Could not complete query')
             throw error
